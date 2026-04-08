@@ -1,0 +1,279 @@
+/* start of global style */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+section {
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+}
+/* end of global style */
+:root{
+    --first-color:#0d6efd;
+    --second-color:#666;
+    --third-color:#20c997;
+    --forth-color:#fff;
+    --fifth-color:#eaf3ff;
+    --six-color:black;
+    --seven-color:#ffc107;
+}
+/* nav style */
+nav{
+    position: fixed;
+
+}
+nav h2 {
+    font-size: 30px;
+    color: var(--second-color);
+    font-weight: bold;
+}
+
+nav h2::after {
+    content: "+";
+    color: var(--first-color);
+}
+    /* hero section style */
+.hero {
+    background-image: url(../image/background.jpg);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    
+
+}
+.hero::after{
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.694);
+}
+.header {
+ z-index: 999; 
+     position: relative;
+         text-align: center;
+
+}
+.header h1 {
+   color: var(--forth-color);  
+}
+.hero button {
+    background: linear-gradient(45deg, var(--first-color), var(--third-color));
+    color: var(--forth-color);
+    border: none;
+    padding: 14px 32px;
+    font-size: 18px;
+    border-radius: 50px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.hero button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+/* Services Section */
+
+.services-card{
+border: none;
+border-radius: 15px;
+transition: 0.3s;
+background: #fff;
+height: 100%;
+}
+
+.services-card:hover{
+   transform: translateY(-8px);
+}
+
+
+.service-icon{
+width: 70px;
+height: 70px;
+margin: auto;
+margin-bottom: 15px;
+border-radius: 50%;
+background:var(--fifth-color);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 28px;
+}
+
+.services-card .card-title{
+font-weight: 600;
+margin-bottom: 10px;
+}
+
+
+.services-card .card-text{
+font-size: 14px;
+color: var(--second-color);
+}
+
+/* Featured Doctors style */
+.featured{
+background-color: var(--fifth-color);
+padding: 60px 0;
+}
+
+
+.featured-card{
+border: none;
+border: 2px solid var(--first-color);
+border-radius: 10px;
+background: var(--forth-color);
+transition: 0.3s;
+height: 100%;
+padding: 20px;
+}
+
+
+
+
+.featured-card h5{
+font-weight: 600;
+color: var(--six-color);
+margin-bottom: 6px;
+}
+
+
+
+
+.featured-card .doctor-specialty{
+color: var(--first-color);
+font-size: 16px;
+font-weight: 500;
+
+}
+
+
+.featured-card .doctor-rating{
+color: var(--seven-color);
+font-size: 30px;
+}
+
+.featured-card .doctor-experience{
+font-size: 15px;
+color: var(--second-color);
+}
+
+
+/* footer style */
+
+.footer{
+background-color: var(--first-color);
+color: var(--forth-color);
+padding: 40px 0;
+margin-top: 40px;
+text-align: center;
+
+}
+
+
+/* Listing Page style */
+
+.listing-card{
+border: none;
+border-radius: 15px;
+transition: 0.3s;
+height: 100%;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.listing-card:hover{
+transform: translateY(-8px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+
+.photo{
+width:60px;
+height:60px;
+background:linear-gradient(45deg, var(--first-color), var(--third-color));
+color:var(--forth-color);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+margin-bottom:10px;
+font-weight:bold;
+font-size:18px;
+}
+
+.listing-card h4{
+font-size:18px;
+font-weight:600;
+margin-bottom:5px;
+}
+
+.specialty{
+display:inline-block;
+background:var(--fifth-color);
+color:var(--first-color);
+padding:3px 10px;
+border-radius:20px;
+font-size:13px;
+margin-bottom:8px;
+}
+
+.rating{
+color:var(--seven-color);
+margin-bottom:5px;
+}
+
+.experience{
+font-size:14px;
+color:var(--second-color);
+margin-bottom:3px;
+}
+
+
+
+
+.days{
+font-size:13px;
+color:var(--second-color);
+margin-bottom:10px;
+font-weight: 600;
+}
+
+
+/* Button */
+
+.bookBtn{
+background:var(--first-color);
+color:var(--forth-color);
+border:none;
+padding:7px 15px;
+border-radius:8px;
+font-size:14px;
+transition:0.3s;
+}
+
+.bookBtn:hover{
+background:var(--third-color);
+}
