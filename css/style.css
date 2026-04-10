@@ -34,6 +34,7 @@ section {
 /* nav style */
 nav{
     position: fixed;
+    background-color: var(--forth-color);
 
 }
 nav h2 {
@@ -45,6 +46,10 @@ nav h2 {
 nav h2::after {
     content: "+";
     color: var(--first-color);
+}
+nav .nav-link{
+    color: var(--first-color);
+    font-weight: 600;
 }
     /* hero section style */
 .hero {
@@ -95,12 +100,14 @@ nav h2::after {
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 /* Services Section */
-
+.services{
+    background-color: var(--forth-color);
+}
 .services-card{
 border: none;
 border-radius: 15px;
 transition: 0.3s;
-background: #fff;
+background: var(--forth-color);
 height: 100%;
 }
 
@@ -194,6 +201,9 @@ text-align: center;
 
 
 /* Listing Page style */
+.doctors-List{
+    background-color: var(--forth-color);
+}
 
 .listing-card{
 border: none;
@@ -207,7 +217,6 @@ box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 transform: translateY(-8px);
 box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
-
 
 .photo{
 width:60px;
@@ -278,6 +287,10 @@ transition:0.3s;
 background:var(--third-color);
 }
 
+/* booking page style */
+.booking-page {
+background-color: var(--forth-color);
+}
 
 /* Patient Form*/
 
@@ -390,6 +403,9 @@ transform: translateY(-2px);
 }
 
 /* //Appointments page style*/
+.appointments-page{
+    background-color: var(--forth-color);
+}
 .appointment-list {
 border-radius: 12px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.08);
@@ -398,6 +414,109 @@ background: var(--fifth-color);
 border: 2px solid var(--first-color);
 }
 .appointments-title {
-    color: #0d6efd;
+    color: var(--first-color);
     margin-top: 20px;
+}
+
+/* ======================= */
+/* Dark Mode */
+
+.sun{
+display:none;
+}
+
+.dark .sun{
+display:inline;
+color: var(--seven-color);
+}
+
+.dark .moon{
+display:none;
+}
+
+
+/* ================= DARK MODE ================= */
+
+.dark{
+--forth-color:#121212;
+--fifth-color:#1e1e1e;
+--second-color:#cfcfcf;
+--six-color:#ffffff;
+}
+
+/* body */
+body{
+background-color: var(--forth-color);
+color: var(--six-color);
+}
+
+/* navbar */
+.dark nav{
+background-color:#1e1e1e;
+}
+.dark nav .nav-link {
+    color: var(--six-color);
+}
+.dark .header h1 {
+    color: var(--six-color);
+}
+.dark .footer {
+      color: var(--six-color);
+}
+/* all cards */
+.dark .services-card,
+.dark .featured-card,
+.dark .listing-card,
+.dark .patient-details,
+.dark .confirm-card,
+.dark .appointment-list,
+.dark .summary-sidebar .card{
+background-color: var(--fifth-color);
+color: var(--six-color);
+}
+
+/* text gray elements */
+.dark .card-text,
+.dark .experience,
+.dark .days,
+.dark .doctor-experience{
+color: var(--second-color);
+}
+
+/* specialty badge */
+.dark .specialty{
+background:#2a2a2a;
+color:white;
+}
+
+/* inputs */
+.dark .form-control,
+.dark .form-select{
+background-color:#2a2a2a;
+color:white;
+border-color:#444;
+}
+
+/* hero overlay */
+.dark .hero::after{
+background-color: rgba(0,0,0,0.85);
+}
+
+/* footer */
+.dark .footer{
+background-color:#000;
+}
+
+/* buttons fix (optional nicer look) */
+.dark .bookBtn{
+background:#2a2a2a;
+}
+
+.dark .bookBtn:hover{
+background:#444;
+}
+
+/* titles */
+.dark .appointments-title{
+color: var(--six-color);
 }
