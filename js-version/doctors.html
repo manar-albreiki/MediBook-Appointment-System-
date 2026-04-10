@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <!-- Doctors Listing Page -->
+    <section class="doctors-List">
+        <div class="container">
+
+
+            <input class="form-control" id="searchInput" type="text" placeholder="Enter Doctor's name or specialty">
+
+            <select id="specialtyFilter" class="form-control mt-3">
+                <option value="All">All</option>
+                <option value="General Medicine">General Medicine</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Dermatology">Dermatology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Orthopedics">Orthopedics</option>
+                <option value="Dentistry">Dentistry</option>
+            </select>
+
+
+            <label for="sortSelect" class="mt-3">Sort by:</label>
+            <select id="sortSelect" class="form-control">
+                <option value="none">None</option>
+                <option value="rating">Rating High → Low</option>
+                <option value="experience">Experience High → Low</option>
+            </select>
+
+
+            <div class="row" id="results"></div>
+
+            <div id="toast" style="display: none;" class="alert alert-success mt-3">Appointment Booked Successfully
+            </div>
+        </div>
+    </section>
+               
+
+
+
+
+    <script src="./js/doctors.js"></script>
+        <script src="./js/darkmode.js"></script>
+    <script src="./js/all.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
