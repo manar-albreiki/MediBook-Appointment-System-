@@ -277,3 +277,127 @@ transition:0.3s;
 .bookBtn:hover{
 background:var(--third-color);
 }
+
+
+/* Patient Form*/
+
+.patient-details{
+margin-top: 20px;
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.patient-details h3{
+    margin-top: 20px;
+margin-bottom: 20px;
+color: var(--first-color);
+font-weight: 600;
+}
+
+
+/* Inputs*/
+
+.form-control,
+.form-select{
+border-radius: 8px;
+padding: 10px;
+border: 1px solid var(--first-color);
+
+}
+
+
+.gender-form{
+background: var(--fifth-color);
+padding: 15px;
+border-radius: 8px;
+}
+
+.gender-form label{
+font-weight: 500;
+margin-bottom: 8px;
+}
+
+
+#confirmBtn{
+width: 100%;
+padding: 12px;
+border-radius: 8px;
+font-weight: 500;
+margin-top: 10px;
+background: var(--first-color);
+color: var(--forth-color);
+border: none;
+transition: 0.3s;
+}
+
+#confirmBtn:hover{
+background: var(--third-color);
+transform: translateY(-2px);
+}
+
+
+/* Sidebar*/
+
+.summary-sidebar .card{  
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+border: none;
+background: var(--fifth-color);
+border: 5px solid var(--first-color);
+}
+
+.summary-sidebar h4{
+color: var(--first-color);
+margin-bottom: 15px;
+}
+
+
+/* Confirmation Card*/
+
+#confirmSummary{
+margin-top: 30px;
+}
+
+.confirm-card{
+background: var(--fifth-color);
+padding: 25px;
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+border: 1px solid var(--forth-color);
+}
+
+.confirm-card h4{
+color: var(--first-color);
+margin-bottom: 15px;
+}
+
+.viewAppointments {
+    width: 100%;
+padding: 12px;
+border-radius: 8px;
+font-weight: 500;
+margin-top: 10px;
+background: var(--first-color);
+color: var(--forth-color);
+border: none;
+transition: 0.3s;
+}
+.viewAppointments:hover{
+background: var(--third-color);
+color: var(--forth-color);
+transform: translateY(-2px);
+}
+
+/* //Appointments page style*/
+.appointment-list {
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+border: none;
+background: var(--fifth-color);
+border: 2px solid var(--first-color);
+}
+.appointments-title {
+    color: #0d6efd;
+    margin-top: 20px;
+}

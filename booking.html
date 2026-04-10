@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+   
+    <div class="container">
+        <div class="patient-details">
+            <h3>Patient details:</h3>
+            <form id="bookingForm">
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="name" placeholder="Enter Your Full Name">
+                    <small class="text-danger" id="nameError"></small>
+                </div>
+
+                <div class="mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="Enter Your Email">
+                    <small class="text-danger" id="emailError"></small>
+                </div>
+
+                <div class="mb-3">
+                    <input type="number" class="form-control" id="Phone" placeholder="Enter Your Phone Number">
+                    <small class="text-danger" id="PhoneError"></small>
+                </div>
+
+                <div class="mb-3">
+                    <input type="number" class="form-control" id="Age" min="1" max="120" placeholder="Enter Your Age">
+                    <small class="text-danger" id="AgeError"></small>
+                </div>
+
+                <div class="gender-form mb-3">
+                    <label class="form-label">Gender</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="Male">
+                        <label class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" value="Female">
+                        <label class="form-check-label">Female</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Medical Concern</label>
+                    <textarea class="form-control" id="medical" rows="3"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Preferred Date</label>
+                    <input type="date" class="form-control" id="date">
+                    <small class="text-danger" id="dateError"></small>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Preferred Time</label>
+                    <select class="form-select" id="time">
+                        <option value="">Select Time</option>
+                        <option>09:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                    </select>
+                    <small class="text-danger" id="timeError"></small>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Insurance Provider</label>
+                    <select class="form-select" id="insurance">
+                        <option value="">Select Insurance</option>
+                        <option>MedNet</option>
+                        <option>GlobeMed</option>
+                        <option>NextCare</option>
+                        <option>Oman Insurance</option>
+                        <option>No Insurance</option>
+                    </select>
+                    <small class="text-danger" id="insuranceError"></small>
+                </div>
+
+                <button type="submit" class="btn" id="confirmBtn">Confirm Appointment</button>
+            </form>
+        </div>
+
+        <div class="summary-sidebar">
+            <div class="col-md-4 mt-3">
+                <div class="card p-3">
+                    <h4>Doctor Summary</h4>
+                    <h5 id="docName"></h5>
+                    <p id="docSpecialty"></p>
+                    <p id="docDays"></p>
+                    <p id="docFee"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="confirmSummary"></div>
+
+    </div>
+
+
+
+
+
+    <script src="./js/all.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/booking.js"></script>
+
+</body>
+
+</html>

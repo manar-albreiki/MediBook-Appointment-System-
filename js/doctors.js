@@ -4,10 +4,10 @@
 // ---------------------------
 // تعريف العناصر والمتغيرات
 // ---------------------------
-let searchInput = document.querySelector("#searchInput");
-let specialtyFilter = document.querySelector("#specialtyFilter");
-let sortSelect = document.querySelector("#sortSelect");
-let results = document.querySelector("#results");
+let searchInput = document.querySelector("#searchInput")
+let specialtyFilter = document.querySelector("#specialtyFilter")
+let sortSelect = document.querySelector("#sortSelect")
+let results = document.querySelector("#results")
 let allDoctors = [];
 
 // ---------------------------
@@ -16,29 +16,108 @@ let allDoctors = [];
 fetch("data.json")
     .then(response => response.json())
     .then(data => {
-        allDoctors = data.doctors;
-        displayDoctors(allDoctors); // عرض كل الدكاترة أول مرة
+        allDoctors = data.doctors
+        displayDoctors(allDoctors) // عرض كل الدكاترة أول مرة
     })
-    .catch(error => console.error("Error loading doctors:", error));
+    .catch(error => console.error("Error loading doctors:", error))
 
 // ---------------------------
 // دالة عرض البطاقات
-// ---------------------------
+// // ---------------------------
+// function displayDoctors(list) {
+//     if (list.length === 0) {
+//         results.innerHTML = "<p>No doctors found</p>";
+//         return;
+//     }
+
+//     let html = ""
+//     for (let doctor of list) {
+//         // الأحرف الأولى من الاسم
+//         let initials = doctor.name.split(" ").map(word => word[0].toUpperCase()).join("");
+
+//         // النجوم حسب التقييم
+//         let stars = "★".repeat(doctor.rating);
+
+//         // الأيام المتاحة
+//         let days = (doctor.availableDays && doctor.availableDays.length > 0)
+//             ? doctor.availableDays.join(", ")
+//             : "No days available";
+
+//         html += `
+//         <div class="col-md-4 col-lg-3 mb-4">
+//             <div class="card listing-card mt-4 text-center">
+//                 <div class="card-body">
+//                     <div class="photo">${initials}</div>
+//                     <h4>${doctor.name}</h4>
+//                     <span class="specialty">${doctor.specialty}</span>
+//                     <div class="rating">${stars}</div>
+//                     <div class="experience">${doctor.experience} Years Experience</div>
+//                     <div class="days">Available: ${days}</div>
+
+//                     <button class="bookBtn"
+//                         data-name="${doctor.name}"
+//                         data-specialty="${doctor.specialty}"
+//                         data-days="${days}"
+//                         data-fee="${doctor.fee}">
+//                         Book Appointment
+//                     </button>
+
+
+//                 </div>
+//             </div>
+//         </div>
+//         `
+//     }
+
+//     results.innerHTML = html
+
+//     // ربط أزرار الحجز بالايفنت
+//     let buttons = document.querySelectorAll(".bookBtn")
+//     buttons.forEach(button => {
+//         button.addEventListener("click", function () {
+//             let doctorName = this.dataset.name
+//             bookDoctor(doctorName)
+//         })
+//     })
+// }
+
+// document.addEventListener("click", function(e){
+
+// if(e.target.classList.contains("bookBtn")){
+
+// let doctor = {
+// name: e.target.dataset.name,
+// specialty: e.target.dataset.specialty,
+// days: e.target.dataset.days,
+// fee: e.target.dataset.fee
+// };
+
+// localStorage.setItem("selectedDoctor", JSON.stringify(doctor));
+
+// window.location.href = "booking.html";
+
+// }
+
+// });
+
 function displayDoctors(list) {
     if (list.length === 0) {
         results.innerHTML = "<p>No doctors found</p>";
         return;
     }
 
-    let html = ""
+    let html = "";
     for (let doctor of list) {
+        // if (!doctor.available) continue; // نتجاهل الدكاترة غير المتاحين
+
         // الأحرف الأولى من الاسم
         let initials = doctor.name.split(" ").map(word => word[0].toUpperCase()).join("");
 
         // النجوم حسب التقييم
-        let stars = "★".repeat(doctor.rating);
+        let starsCount = Math.round(doctor.rating);
+        let stars = "★".repeat(starsCount);
 
-        // الأيام المتاحة
+        // الأيام المتاحة كسلسلة نصية
         let days = (doctor.availableDays && doctor.availableDays.length > 0)
             ? doctor.availableDays.join(", ")
             : "No days available";
@@ -53,7 +132,12 @@ function displayDoctors(list) {
                     <div class="rating">${stars}</div>
                     <div class="experience">${doctor.experience} Years Experience</div>
                     <div class="days">Available: ${days}</div>
-                    <button class="bookBtn" data-name="${doctor.name}">
+
+                    <button class="bookBtn"
+                        data-name="${doctor.name}"
+                        data-specialty="${doctor.specialty}"
+                        data-days="${days}"
+                        data-fee="${doctor.fee}">
                         Book Appointment
                     </button>
                 </div>
@@ -64,48 +148,52 @@ function displayDoctors(list) {
 
     results.innerHTML = html;
 
-    // ربط أزرار الحجز بالايفنت
-    let buttons = document.querySelectorAll(".bookBtn");
-    buttons.forEach(button => {
-        button.addEventListener("click", function () {
-            let doctorName = this.dataset.name;
-            bookDoctor(doctorName);
+    // ربط كل أزرار الحجز بالحدث مباشرة
+    document.querySelectorAll(".bookBtn").forEach(btn => {
+        btn.addEventListener("click", function() {
+            let doctor = {
+                name: this.dataset.name,
+                specialty: this.dataset.specialty,
+                days: this.dataset.days,
+                fee: this.dataset.fee
+            };
+            localStorage.setItem("selectedDoctor", JSON.stringify(doctor));
+            window.location.href = "booking.html"; // رابط صفحة الحجز
         });
     });
 }
-
 
 // ---------------------------
 // البحث الحي (keyup)
 // ---------------------------
 searchInput.addEventListener("keyup", function() {
-    let searchValue = this.value.toLowerCase().trim();
+    let searchValue = this.value.toLowerCase().trim()
     let filteredDoctors = [];
 
     for (let i = 0; i < allDoctors.length; i++) {
         if (allDoctors[i].name.toLowerCase().includes(searchValue) ||
             allDoctors[i].specialty.toLowerCase().includes(searchValue)) {
-            filteredDoctors.push(allDoctors[i]);
+            filteredDoctors.push(allDoctors[i])
         }
     }
 
-    displayDoctors(filteredDoctors);
+    displayDoctors(filteredDoctors)
 });
 
 // ---------------------------
 // فلترة حسب التخصص
 // ---------------------------
 specialtyFilter.addEventListener("change", function() {
-    let selectedSpecialty = this.value;
-    let filteredDoctors = [];
+    let selectedSpecialty = this.value
+    let filteredDoctors = []
 
     for (let i = 0; i < allDoctors.length; i++) {
         if (selectedSpecialty === "All" || allDoctors[i].specialty === selectedSpecialty) {
-            filteredDoctors.push(allDoctors[i]);
+            filteredDoctors.push(allDoctors[i])
         }
     }
 
-    displayDoctors(filteredDoctors);
+    displayDoctors(filteredDoctors)
 });
 
 // ---------------------------
