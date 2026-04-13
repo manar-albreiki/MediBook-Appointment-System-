@@ -36,11 +36,16 @@ ${service.icon}
 </div>
 </div>
 
-`;
+`
 
-        });
+        })
 
-    });
+    })
+    let bookBtn = document.getElementById("bookBtn");
+
+bookBtn.addEventListener("click", function () {
+    window.location.href = "doctors.html";
+})
 // -------------------------------------------------
 // Featured Doctors Section
 fetch("data.json")
