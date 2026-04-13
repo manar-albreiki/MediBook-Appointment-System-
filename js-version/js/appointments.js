@@ -1,9 +1,9 @@
 let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
 
-let container = document.getElementById("appointmentsList");
+let container = document.querySelector("#appointmentsList")
 
 if(appointments.length === 0){
-container.innerHTML = "<p>No appointments found</p>";
+container.innerHTML = "<p>No appointments found</p>"
 }
 
 for(let i = 0; i < appointments.length; i++){
@@ -18,8 +18,12 @@ let card = `
 <p><b>Time:</b> ${app.time}</p>
 <p><b>Patient:</b> ${app.name}</p>
 </div>
-`;
+`
 
 container.innerHTML += card
 
 }
+
+document.querySelector("#backHome").addEventListener("click", function () {
+    window.location.href = "index.html";
+})
