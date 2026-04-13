@@ -127,13 +127,12 @@ refrenceNum:refrenceNum,
 }
 
 
-// جلب المواعيد القديمة
 let appointments = JSON.parse(localStorage.getItem("appointments")) || []
 
-// إضافة الموعد الجديد
+
 appointments.push(newAppointment)
 
-// حفظ مرة ثانية
+
 localStorage.setItem("appointments", JSON.stringify(appointments))
 
 // to view all appointments in a new page
