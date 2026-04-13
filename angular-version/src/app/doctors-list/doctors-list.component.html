@@ -1,5 +1,6 @@
 
-<div class="container mt-4">
+<div class="list">
+    <div class="container mt-4">
 
 <h2>Doctors List</h2>
 
@@ -7,13 +8,13 @@
 
 <div class="col-md-3" *ngFor="let doctor of doctors">
 
-<app-doctor-card
-[doctor]="doctor"
-(selectDoctor)="onDoctorSelected($event)">
-</app-doctor-card>
+<app-doctor-card [doctor]="doctor" (selectDoctor)="onDoctorSelected($event)"> </app-doctor-card>
+
+</div>
+<!--  doctor اليمين → من DoctorsList
+ doctor اليسار → في DoctorCard -->
 
 </div>
 
 </div>
-
 </div>

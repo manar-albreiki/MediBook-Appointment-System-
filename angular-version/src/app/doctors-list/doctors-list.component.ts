@@ -8,20 +8,19 @@ import { Doctor } from '../doctor';
   styleUrls: ['./doctors-list.component.css']
 })
 export class DoctorsListComponent implements OnInit {
-  doctors: Doctor[] = [];
+  doctors: Doctor[] = []
 
-  // 1️⃣ Inject DoctorsService
-  // constructor(private _doctorsService: DoctorsService) {}
+  
    constructor(private doctorsService: DoctorsService) {}
 
-  // 2️⃣ Load data in ngOnInit
+
   ngOnInit(): void { 
     this.doctors = this.doctorsService.getBySpecialty('All')
     
   }
 
   onDoctorSelected(doctor: Doctor) {
-  console.log("Selected:", doctor);
+  console.log("Selected:", doctor)
 }
 
 }

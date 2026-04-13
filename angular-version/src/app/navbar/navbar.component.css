@@ -1,0 +1,5 @@
+nav {
+    position: fixed;
+    z-index: 99999;
+   background-color: rgb(235, 235, 235);
+}

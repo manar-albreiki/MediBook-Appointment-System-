@@ -1,4 +1,5 @@
-<h2>Book Appointment</h2>
+<div class=" container appointment">
+    <h2>Book Appointment</h2>
 <input type="text" class="form-control" placeholder="Enter patient name"
 (input)=" showData($event);checkForm()" >
 <p>Booking for: {{ patientName }}</p>
@@ -6,3 +7,4 @@
 [disabled]="!isFormValid">
 Submit
 </button>
+</div>

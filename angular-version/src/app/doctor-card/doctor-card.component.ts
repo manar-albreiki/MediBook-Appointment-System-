@@ -9,6 +9,7 @@ import { Doctor } from '../doctor';
 export class DoctorCardComponent {
 @Input () doctor!: Doctor
 @Output() selectDoctor = new EventEmitter()
+
 select(){
   this.selectDoctor.emit(this.doctor)
 }
