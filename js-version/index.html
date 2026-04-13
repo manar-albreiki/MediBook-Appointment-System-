@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="./css/all.min.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -13,7 +13,7 @@
 <body class="dark">
     <!-- nav section -->
 
-
+<!-- 
     <nav class="navbar navbar-expand-lg  fixed-top shadow">
         <div class="container">
             <h2>MediBook</h2>
@@ -25,17 +25,17 @@
 
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link active" href="#">Doctores</a>
-                    <a class="nav-link active" href="#">Services</a>
-                    <a class="nav-link active" href="#">Contact</a>
+                    <a class="nav-link active" href="#home">Home</a>
+                    <a class="nav-link active" href="#doctorr">Doctores</a>
+                    <a class="nav-link active" href="#service">Services</a>
+                    <a class="nav-link active" href="#footer">Contact</a>
                 </div>
             </div>
 
-            <!-- Checkbox مخفي -->
+        
             <input type="checkbox" id="darkToggle" hidden>
 
-            <!-- الزر مع أيقونات i -->
+       
             <label for="darkToggle" class="dark-btn">
                 <i class="fa-solid fa-sun sun"></i>
                 <i class="fa-solid fa-moon moon"></i>
@@ -43,20 +43,55 @@
 
 
         </div>
-    </nav>
+    </nav> -->
 
+<nav class="navbar navbar-expand-lg fixed-top shadow navbar-dark bg-dark">
+<div class="container">
 
+<h2 class="navbar-brand">MediBook</h2>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+data-bs-target="#navbarNavAltMarkup">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+<div class="navbar-nav mx-auto">
+<a class="nav-link active" href="#home">Home</a>
+<a class="nav-link active" href="#doctorr">Doctors</a>
+<a class="nav-link active" href="#service">Services</a>
+<a class="nav-link active" href="#footer">Contact</a>
+</div>
+
+<!-- Dark Mode -->
+<div class="ms-auto">
+
+<input type="checkbox" id="darkToggle" hidden>
+
+<label for="darkToggle" class="dark-btn">
+<i class="fa-solid fa-sun sun"></i>
+<!-- <i class="fa-solid fa-moon moon"></i> -->
+ <i class="fa-solid fa-moon moon" style="color:#8ecae6;"></i>
+</label>
+
+</div>
+
+</div>
+
+</div>
+</nav>
     <!-- home page -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="container header">
             <h1>Your Health, Our Priority</h1>
-            <button>Book Appointment</button>
+            <button id="bookBtn">Book Appointment</button>
         </div>
     </section>
 
     <!-- Services section  -->
 
-<section class="services">
+<section class="services" id="service">
     <div class="container">
             <h2 class="text-center mb-5">Our Services</h2>
         <div class="row" id="services">
@@ -66,7 +101,7 @@
 </section>
 
     <!-- Featured Doctors section  -->
-<section class="featured">
+<section class="featured" id="doctorr">
   <div class="container">
     <h2 class="text-center mb-5">Featured Doctors</h2>
     <div class="row" id="doctors">
@@ -75,8 +110,9 @@
   </div>
 </section>
     <!-- Clinic stats section  -->
-<section class="stats">
+<section class="stats" id="footer">
 <div class="container">
+      <h2 class="text-center mb-5">Clinic stats</h2>
 <div class="row text-center" id="stats">
 
 <div class="col-md-4 col-sm-6 col-12 mb-4">
@@ -100,7 +136,7 @@
 
 
 <!-- footer section  -->
-<section class="footer">
+<section class="footer" id="footer">
   <div class="container">
     <h5><i class="fas fa-map-marker-alt"></i> <b>Clinic Address:</b> 45 Al Khuwair Street, Muscat, Oman</h5>
     <h5><i class="fas fa-phone-alt"></i> <b>Phone:</b> +968 2455 7890</h5>
