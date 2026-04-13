@@ -31,7 +31,7 @@ section {
     --six-color:black;
     --seven-color:#ffc107;
 }
-/* nav style */
+/* === nav style === */
 nav{
     position: fixed;
     background-color: var(--forth-color);
@@ -51,6 +51,7 @@ nav .nav-link{
     color: var(--first-color);
     font-weight: 600;
 }
+/* ==== home page ==== */
     /* hero section style */
 .hero {
     background-image: url(../image/background.jpg);
@@ -199,7 +200,7 @@ text-align: center;
 
 }
 
-
+/* ==== doctor page ==== */
 /* Listing Page style */
 .doctors-List{
     background-color: var(--forth-color);
@@ -287,7 +288,7 @@ transition:0.3s;
 background:var(--third-color);
 }
 
-/* booking page style */
+/* ==== booking page style ===== */
 .booking-page {
 background-color: var(--forth-color);
 }
@@ -353,11 +354,12 @@ transform: translateY(-2px);
 /* Sidebar*/
 
 .summary-sidebar .card{  
+    margin-top: 20px;
 border-radius: 12px;
 box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 border: none;
 background: var(--fifth-color);
-border: 5px solid var(--first-color);
+border: 2px solid var(--first-color);
 }
 
 .summary-sidebar h4{
@@ -402,7 +404,7 @@ color: var(--forth-color);
 transform: translateY(-2px);
 }
 
-/* //Appointments page style*/
+/* // ===== Appointments page style ===== */
 .appointments-page{
     background-color: var(--forth-color);
 }
